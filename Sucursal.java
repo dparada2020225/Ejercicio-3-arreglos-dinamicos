@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Sucursal {
     private String nombreSucursal;
@@ -14,57 +16,63 @@ public class Sucursal {
         this.prestamos = new ArrayList<>();
     }
 
-    public String getNombreSucursal() {
-        return nombreSucursal;
+    public void agregarLibro(Libro libro) {
+        libros.add(libro);
     }
 
-    public void setNombreSucursal(String nombreSucursal) {
-        this.nombreSucursal = nombreSucursal;
+    public void registrarMiembro(Miembro miembro) {
+        miembros.add(miembro);
+    }
+
+    public boolean registrarPrestamo(String ID, String ISBN, String fechaPrestamo, String fechaDevolucionEsperada) {
+        Libro libro = libros.stream().filter(l -> l.getISBN().equals(ISBN)).findFirst().orElse(null);
+        Miembro miembro = miembros.stream().filter(m -> m.getID().equals(ID)).findFirst().orElse(null);
+        if (libro != null && miembro != null) {
+            Prestamo prestamo = new Prestamo(libro, miembro, fechaPrestamo, fechaDevolucionEsperada);
+            prestamos.add(prestamo);
+            return true;
+        }
+        return false;
+    }
+
+    public String generarEstadisticas() {
+        if (prestamos.isEmpty()) {
+            return "No hay préstamos registrados.";
+        }
+
+        Map<String, Long> generoCount = prestamos.stream()
+            .collect(Collectors.groupingBy(prestamo -> prestamo.getLibro().getGenero(), Collectors.counting()));
+
+        Map<String, Long> libroCount = prestamos.stream()
+            .collect(Collectors.groupingBy(prestamo -> prestamo.getLibro().getTitulo(), Collectors.counting()));
+
+        String generoMasSolicitado = generoCount.entrySet().stream()
+            .max(Map.Entry.comparingByValue())
+            .map(Map.Entry::getKey)
+            .orElse("Ninguno");
+
+        String libroMasPrestado = libroCount.entrySet().stream()
+            .max(Map.Entry.comparingByValue())
+            .map(Map.Entry::getKey)
+            .orElse("Ninguno");
+
+        return String.format("Estadísticas de la Sucursal %s:\nTotal de préstamos: %d\nGénero más solicitado: %s\nLibro más prestado: %s",
+                             nombreSucursal, prestamos.size(), generoMasSolicitado, libroMasPrestado);
+    }
+
+    public String getNombreSucursal() {
+        return nombreSucursal;
     }
 
     public List<Libro> getLibros() {
         return libros;
     }
 
-    public void setLibros(List<Libro> libros) {
-        this.libros = libros;
-    }
-
     public List<Miembro> getMiembros() {
         return miembros;
     }
 
-    public void setMiembros(List<Miembro> miembros) {
-        this.miembros = miembros;
-    }
-
     public List<Prestamo> getPrestamos() {
         return prestamos;
-    }
-
-    public void setPrestamos(List<Prestamo> prestamos) {
-        this.prestamos = prestamos;
-    }
-
-    public void agregarLibro(Libro libro) {
-        this.libros.add(libro);
-    }
-
-    public void registrarMiembro(Miembro miembro) {
-        this.miembros.add(miembro);
-    }
-
-    public void registrarPrestamo(Prestamo prestamo) {
-        this.prestamos.add(prestamo);
-    }
-
-    public String generarEstadisticas() {
-        // Implementación de generación de estadísticas
-        return "Estadísticas generadas.";
-    }
-
-    @Override
-    public String toString() {
-        return "Sucursal [nombreSucursal=" + nombreSucursal + "]";
     }
 }

@@ -55,6 +55,12 @@ public class Libro {
 
     @Override
     public String toString() {
-        return "Libro [ISBN=" + ISBN + ", titulo=" + titulo + ", autor=" + autor + ", anioPublicacion=" + anioPublicacion + ", genero=" + genero + "]";
+        return "Libro{" +
+                "ISBN='" + ISBN + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", autor='" + autor + '\'' +
+                ", anioPublicacion='" + anioPublicacion + '\'' +
+                ", genero='" + genero + '\'' +
+                '}';
     }
 }

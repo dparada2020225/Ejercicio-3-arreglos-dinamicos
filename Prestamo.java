@@ -45,6 +45,11 @@ public class Prestamo {
 
     @Override
     public String toString() {
-        return "Prestamo [libro=" + libro + ", miembro=" + miembro + ", fechaPrestamo=" + fechaPrestamo + ", fechaDevolucionEsperada=" + fechaDevolucionEsperada + "]";
+        return "Prestamo{" +
+                "libro=" + libro +
+                ", miembro=" + miembro +
+                ", fechaPrestamo='" + fechaPrestamo + '\'' +
+                ", fechaDevolucionEsperada='" + fechaDevolucionEsperada + '\'' +
+                '}';
     }
 }

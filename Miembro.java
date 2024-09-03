@@ -25,6 +25,9 @@ public class Miembro {
 
     @Override
     public String toString() {
-        return "Miembro [ID=" + ID + ", nombre=" + nombre + "]";
+        return "Miembro{" +
+                "ID='" + ID + '\'' +
+                ", nombre='" + nombre + '\'' +
+                '}';
     }
 }
