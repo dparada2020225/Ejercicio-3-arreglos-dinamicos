@@ -4,7 +4,7 @@
 * CC2008
 * AUTOR: Denil Parada
 * FECHA: 01/09/2024
-* DESCRIPCION: Interfaz de usuario para gestionar interacciones con el sistema, incluyendo menús para gestionar libros, miembros y préstamos.
+* DESCRIPCION: Interfaz de usuario para interactuar con el sistema de gestión de la biblioteca.
 */
 import java.util.Scanner;
 
@@ -12,11 +12,18 @@ public class Interfaz {
     private Gestionador gestionador;
     private Scanner scanner;
 
+    /**
+     * Constructor que inicializa el gestor y el scanner para la interfaz.
+     * @param gestionador El gestor de la biblioteca.
+     */
     public Interfaz(Gestionador gestionador) {
         this.gestionador = gestionador;
         this.scanner = new Scanner(System.in);
     }
 
+    /**
+     * Muestra el menú principal y permite al usuario interactuar con el sistema.
+     */
     public void mostrarMenuPrincipal() {
         int opcion;
         do {

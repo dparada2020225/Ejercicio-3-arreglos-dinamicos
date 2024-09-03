@@ -4,7 +4,7 @@
 * CC2008
 * AUTOR: Denil Parada
 * FECHA: 01/09/2024
-* DESCRIPCION: Clase que representa un libro en el sistema de biblioteca, almacenando detalles como ISBN, título, autor, año de publicación y género.
+* DESCRIPCION: Clase que representa un libro con atributos como ISBN, título, autor, año de publicación y género.
 */
 public class Libro {
     private String ISBN;
@@ -13,6 +13,14 @@ public class Libro {
     private String anioPublicacion;
     private String genero;
 
+    /**
+     * Constructor para inicializar un libro con sus detalles.
+     * @param ISBN El ISBN del libro.
+     * @param titulo El título del libro.
+     * @param autor El autor del libro.
+     * @param anioPublicacion El año de publicación del libro.
+     * @param genero El género del libro.
+     */
     public Libro(String ISBN, String titulo, String autor, String anioPublicacion, String genero) {
         this.ISBN = ISBN;
         this.titulo = titulo;
@@ -21,6 +29,7 @@ public class Libro {
         this.genero = genero;
     }
 
+    // Getters y setters
     public String getISBN() {
         return ISBN;
     }

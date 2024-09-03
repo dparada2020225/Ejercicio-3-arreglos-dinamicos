@@ -4,17 +4,23 @@
 * CC2008
 * AUTOR: Denil Parada
 * FECHA: 01/09/2024
-* DESCRIPCION: Clase que representa a un miembro del sistema de biblioteca, incluyendo detalles como el ID y nombre del miembro.
+* DESCRIPCION: Clase que representa a un miembro de la biblioteca con identificación y nombre.
 */
 public class Miembro {
     private String ID;
     private String nombre;
 
+    /**
+     * Constructor para crear un miembro de la biblioteca.
+     * @param ID El identificador único del miembro.
+     * @param nombre El nombre del miembro.
+     */
     public Miembro(String ID, String nombre) {
         this.ID = ID;
         this.nombre = nombre;
     }
 
+    // Getters y setters
     public String getID() {
         return ID;
     }
