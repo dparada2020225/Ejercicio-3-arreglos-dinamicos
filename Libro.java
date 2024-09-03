@@ -1,3 +1,11 @@
+/**
+* UNIVERSIDAD DEL VALLE DE GUATEMALA
+* DEPARTAMENTO DE CIENCIA DE LA COMPUTACIÓN
+* CC2008
+* AUTOR: Denil Parada
+* FECHA: 01/09/2024
+* DESCRIPCION: Clase que representa un libro en el sistema de biblioteca, almacenando detalles como ISBN, título, autor, año de publicación y género.
+*/
 public class Libro {
     private String ISBN;
     private String titulo;

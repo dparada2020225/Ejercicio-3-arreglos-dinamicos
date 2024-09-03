@@ -1,3 +1,11 @@
+/**
+* UNIVERSIDAD DEL VALLE DE GUATEMALA
+* DEPARTAMENTO DE CIENCIA DE LA COMPUTACIÓN
+* CC2008
+* AUTOR: Denil Parada
+* FECHA: 01/09/2024
+* DESCRIPCION: Clase que gestiona los préstamos de libros a miembros, incluyendo detalles del libro, miembro y fechas de préstamo y devolución esperada.
+*/
 public class Prestamo {
     private Libro libro;
     private Miembro miembro;

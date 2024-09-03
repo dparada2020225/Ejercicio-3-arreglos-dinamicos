@@ -1,3 +1,11 @@
+/**
+* UNIVERSIDAD DEL VALLE DE GUATEMALA
+* DEPARTAMENTO DE CIENCIA DE LA COMPUTACIÓN
+* CC2008
+* AUTOR: Denil Parada
+* FECHA: 01/09/2024
+* DESCRIPCION: Interfaz de usuario para gestionar interacciones con el sistema, incluyendo menús para gestionar libros, miembros y préstamos.
+*/
 import java.util.Scanner;
 
 public class Interfaz {

@@ -1,3 +1,11 @@
+/**
+* UNIVERSIDAD DEL VALLE DE GUATEMALA
+* DEPARTAMENTO DE CIENCIA DE LA COMPUTACIÓN
+* CC2008
+* AUTOR: Denil Parada
+* FECHA: 01/09/2024
+* DESCRIPCION: Clase que representa una sucursal de la biblioteca, manejando libros, miembros, y préstamos, y generando estadísticas.
+*/
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;

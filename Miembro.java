@@ -1,3 +1,11 @@
+/**
+* UNIVERSIDAD DEL VALLE DE GUATEMALA
+* DEPARTAMENTO DE CIENCIA DE LA COMPUTACIÓN
+* CC2008
+* AUTOR: Denil Parada
+* FECHA: 01/09/2024
+* DESCRIPCION: Clase que representa a un miembro del sistema de biblioteca, incluyendo detalles como el ID y nombre del miembro.
+*/
 public class Miembro {
     private String ID;
     private String nombre;

@@ -1,3 +1,11 @@
+/**
+* UNIVERSIDAD DEL VALLE DE GUATEMALA
+* DEPARTAMENTO DE CIENCIA DE LA COMPUTACIÓN
+* CC2008
+* AUTOR: Denil Parada
+* FECHA: 01/09/2024
+* DESCRIPCION: Clase responsable de gestionar las sucursales, incluyendo la creación, búsqueda y generación de estadísticas globales.
+*/
 import java.util.ArrayList;
 import java.util.List;
 
